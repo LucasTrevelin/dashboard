@@ -1,0 +1,12 @@
+<div class="flex h-screen">
+  <h1>Estatísticas</h1>
+  <app-sidebar (optionSelected)="onOptionSelected($event)"></app-sidebar>
+  <div  class="flex-1 p-4">
+    <div *ngIf="selectedOption === 'pieChart'">
+      <app-pie-chart></app-pie-chart>
+    </div>
+    <div *ngIf="selectedOption === 'barChart'">
+      <app-bar-chart></app-bar-chart>
+    </div>
+  </div>
+</div>
