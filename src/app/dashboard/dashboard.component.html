@@ -1,11 +1,11 @@
-<div class="flex h-screen">
-  <h1>Estatísticas</h1>
-  <app-sidebar (optionSelected)="onOptionSelected($event)"></app-sidebar>
+<div class="flex flex-col h-screen mt-[1rem] px-[1rem]">
+  <h1 class="text-3xl font-bold underline">Estatísticas</h1>
+  <app-tabs [tabsList]="tabsList" (optionSelected)="onOptionSelected($event)"></app-tabs>
   <div  class="flex-1 p-4">
-    <div *ngIf="selectedOption === 'pieChart'">
-      <app-pie-chart></app-pie-chart>
+    <div *ngIf="selectedOption === 'Composição de Investimentos'">
+      <app-composition-chart></app-composition-chart>
     </div>
-    <div *ngIf="selectedOption === 'barChart'">
+    <div *ngIf="selectedOption === 'Investimento vs Tempo'">
       <app-bar-chart></app-bar-chart>
     </div>
   </div>
